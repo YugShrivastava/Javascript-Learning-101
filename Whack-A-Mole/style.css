@@ -1,0 +1,26 @@
+body{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+
+.wrapper{
+    padding: 20px;
+    width: 30vw;
+    height: 30vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 2px solid white;
+    gap: 20px;
+}
+
+.circle{
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
