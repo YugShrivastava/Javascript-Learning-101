@@ -9,6 +9,11 @@ function getRandomPlace(placed) {
   return place;
 }
 
+function displayMole(place){
+  const mole = document.getElementById(place);
+  mole.innerHTML = `<img src='./images/mole.svg' alt='mole' id='mole-img'>`;
+}
+
 function popUp(place) {
   console.log(whackCircles);
   console.log(place);
@@ -25,9 +30,13 @@ function playRound(place) {
   place = getRandomPlace(place);
 }
 
-while (round < 10) {
-  console.log("Round Number: ", ++round);
-  playRound(place);
+function startGame() {
+  while (round < 10) {
+    console.log("Round Number: ", ++round);
+    playRound(place);
+  }
+
+  console.log("\n\nCompleted.");
 }
 
-console.log("\n\nCompleted.");
+// startGame();
