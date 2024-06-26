@@ -10,8 +10,8 @@ body{
 
 .wrapper{
     padding: 20px;
-    width: 30vw;
-    height: 30vw;
+    /* width: 30vw;
+    height: 30vw; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -26,12 +26,6 @@ body{
     border-radius: 50%;
     width: 10vw;
     height: 10vw;
-}
-
-#one{
-    border: none;
-    background-color: black;
-    
 }
 
 #mole-img{
