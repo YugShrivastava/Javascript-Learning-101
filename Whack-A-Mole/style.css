@@ -1,4 +1,4 @@
-body{
+body {
     background-color: black;
     color: white;
     display: flex;
@@ -8,7 +8,7 @@ body{
     gap: 2vh;
 }
 
-.wrapper{
+.wrapper {
     padding: 20px;
     /* width: 30vw;
     height: 30vw; */
@@ -18,7 +18,7 @@ body{
     gap: 20px;
 }
 
-.circle{
+.circle {
     border: 1px solid green;
     box-shadow: 2px 0px 12px 2px rgb(33, 33, 33) inset;
     background-color: green;
@@ -27,13 +27,13 @@ body{
     height: 10vw;
 }
 
-#mole-img{
+#mole-img {
     border-radius: 50%;
     background-color: black;
     width: 10vw;
 }
 
-.displayDiv{
+.displayDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,14 +42,13 @@ body{
     font-size: 1.5rem;
 }
 
-a{
+a {
     text-decoration: none;
     border: none;
-
 }
 
-dialog{
-    background-color: rgb(0,0,0);
+dialog {
+    background-color: rgb(0, 0, 0);
     color: white;
     border: 0.5px solid white;
     border-radius: 12px;
@@ -58,12 +57,12 @@ dialog{
     text-align: center;
 }
 ::backdrop {
-background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     opacity: 0.8;
-  }
+}
 
-button{
-    background-color: rgb(0,0,0);
+button {
+    background-color: rgb(0, 0, 0);
     box-shadow: none;
     border: 1px solid rgba(255, 255, 255);
     padding: 10px;
