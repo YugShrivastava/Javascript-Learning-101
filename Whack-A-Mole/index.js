@@ -1,57 +1,63 @@
-const whackCircles = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 const moles = document.querySelectorAll(".circle");
 let place = Math.floor(Math.random() * 9 + 1);
-let round = 0,
-  score = 0;
+let score = 0, round = 0;
+
+// let time = Math.floor(Math.random() * 1000);
+// console.log(time);
+
+// function getRandomTime(min, max){
+//   return time = Math.floor(Math.random() * (max - min) + min);
+// }
 
 function getRandomPlace(placed) {
   place = Math.floor(Math.random() * 9 + 1);
 
-  if (placed === place) place = getRandomPlace();
+  if (placed === place) place = getRandomPlace(place);
   return place;
-}
-
-function whackIt(event) {
-  event.target.innerHTML = "";
-  score++;
-  playRound();
 }
 
 function displayMole(place) {
   const mole = document.getElementById(place);
   mole.innerHTML = `<img src='./images/mole.svg' alt='mole' id='mole-img'>`;
 }
+displayMole(place);
 
-function popUp(place) {
-  console.log(whackCircles);
-  console.log(place);
-  let mole = Number(prompt("Enter the mole circle number: "));
-  if (mole === place) console.log("Correct");
-  else playRound(place);
+function scoreDisplay(){
+  const scoreDiv = document.querySelector(".scoreDiv");
+  scoreDiv.textContent = `Score = ${++score}`;
 }
 
-function playRound(place) {
-  whackCircles[place - 1] = place;
-  popUp(place);
-  whackCircles[place - 1] = 0;
+function dialogOpen(round){
+  const dialog = document.querySelector("dialog");
+  dialog.showModal();
 
-  place = getRandomPlace(place);
-}
+  const replay = document.querySelector("#replay");
 
-function startGame() {
-  while (round < 10) {
-    console.log("Round Number: ", ++round);
-    playRound(place);
-  }
+  replay.addEventListener("click", () => {
 
-  console.log("Score = ", score);
-  console.log("\n\nCompleted.");
+    score = -1;
+    scoreDisplay();
+  
+    const roundDiv = document.querySelector(".roundDiv");
+    roundDiv.textContent = `Round = ${round}`;
+
+    dialog.close();
+  });
 }
 
 moles.forEach((mole) => {
-  mole.addEventListener("click", whackIt(event));
+  mole.addEventListener("click", () => {
+    if (score < 10){
+      if (mole.getAttribute("id") == place) {
+        mole.innerHTML = "";
+        scoreDisplay();
+        place = getRandomPlace(place);
+        displayMole(place);
+      } else {}
+    }
+    if (score === 10) {
+      dialogOpen(++round);
+      return;
+    }
+  });
 });
-
-// startGame();
-
-// AA7339 F4F3F3 FCFCFC

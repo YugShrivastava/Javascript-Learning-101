@@ -8,6 +8,10 @@
 </head>
 <body>
     <h1>Whack-A-Mole</h1>
+    <div class="displayDiv">
+        <div class="scoreDiv">Score = 0</div>
+        <div class="roundDiv">Round = 0</div>
+    </div>
     <div class="wrapper">
         <div class="circle" id="1"></div>
         <div class="circle" id="2"></div>
@@ -19,6 +23,10 @@
         <div class="circle" id="8"></div>
         <div class="circle" id="9"></div>
     </div>
+    <dialog>
+        <a href="./index.html"><button id="start">Restart</button></a>
+        <button id="replay">Replay</button>
+    </dialog>
     <script src="index.js" defer></script>
 </body>
 </html>
