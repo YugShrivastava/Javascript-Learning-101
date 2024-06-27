@@ -1,0 +1,1 @@
+Simple whack a mole game created by javascript for fun.
