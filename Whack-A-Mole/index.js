@@ -25,7 +25,7 @@ function displayMole(place) {
     
             index++;
             const indexDiv = document.querySelector(".indexDiv");
-            indexDiv.textContent = `Index = ${++index}`;
+            indexDiv.textContent = `Index = ${1 + ++index / 2}`;
             console.log(place);
             
             moles.forEach((mole) => {
