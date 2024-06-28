@@ -58,7 +58,7 @@ dialog {
 }
 ::backdrop {
     background-color: rgb(0, 0, 0);
-    opacity: 0.8;
+    opacity: 1;
 }
 
 button {

@@ -18,14 +18,24 @@ function getRandomPlace(placed) {
     return place;
 }
 
+function checkForGameOver(){
+    let indexSpan = document.querySelector("span");
+console.log("\n\n", indexSpan.textContent)
+    if(indexSpan.textContent == 20){
+        dialogOpen(++round);
+        return;
+    }
+}
+
 function displayMole(place) {
     timeout = setTimeout(() => {
+        let indexDiv;
         if(!timeoutFlag) {
             console.log("Inside setTimeout");
     
             index++;
-            const indexDiv = document.querySelector(".indexDiv");
-            indexDiv.textContent = `Index = ${1 + ++index / 2}`;
+            indexDiv = document.querySelector(".indexDiv");
+            indexDiv.innerHTML = `Index = <span>${1 + ++index / 2}</span>`;
             console.log(place);
             
             moles.forEach((mole) => {
@@ -38,7 +48,9 @@ function displayMole(place) {
         else{
     
         }
-    }, getRandomTime(600, 800))
+
+        checkForGameOver();
+    }, getRandomTime(2000, 3000))
     const mole = document.getElementById(place);
     mole.innerHTML = `<img src='./images/mole.svg' alt='mole' id='mole-img'>`;
 }
@@ -48,7 +60,7 @@ function scoreDisplay() {
     const scoreDiv = document.querySelector(".scoreDiv");
     scoreDiv.textContent = `Score = ${++score}`;
     const indexDiv = document.querySelector(".indexDiv");
-    indexDiv.textContent = `Index = ${++index}`;
+    indexDiv.innerHTML = `<p>Index = <span>${++index}</span></p>`;
 }
 
 function dialogOpen(round) {
@@ -93,3 +105,4 @@ moles.forEach((mole) => {
         timeoutFlag = false;
     });
 });
+
