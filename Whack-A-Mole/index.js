@@ -87,22 +87,32 @@ let timeoutFlag = false;
 
 moles.forEach((mole) => {
     mole.addEventListener("click", () => {
-        timeoutFlag = true;
-        if (index < 20) {
-            if (mole.getAttribute("id") == place) {
-                mole.innerHTML = "";
-                scoreDisplay();
-                place = getRandomPlace(place);
+        // timeoutFlag = true;
+        // if (index < 20) {
+        //     if (mole.getAttribute("id") == place) {
+        //         mole.innerHTML = "";
+        //         scoreDisplay();
+        //         place = getRandomPlace(place);
 
-                displayMole(place);
-            } else {
-            }
+        //         displayMole(place);
+        //     } else {
+        //     }
+        // }
+        // if (index === 20) {
+        //     dialogOpen(++round);
+        //     return;
+        // }
+        // timeoutFlag = false;
+        clearTimeout(timeout);
+
+        if(index < 20 && mole.getAttribute("id") == place){
+            mole.innerHTML = "";
+            scoreDisplay();
+            place = getRandomPlace(place);
+
+            displayMole(place);
         }
-        if (index === 20) {
-            dialogOpen(++round);
-            return;
-        }
-        timeoutFlag = false;
+
     });
 });
 
